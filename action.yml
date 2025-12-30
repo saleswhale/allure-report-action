@@ -45,10 +45,21 @@ inputs:
     description: 'GitHub repository owner'
     required: true
     default: ${{ github.repository_owner }}
+  github_tests_repo:
+    description: 'GitHub repository where test are run'
+    required: true
+    default: ${{ github.repository }}
   report_url:
     description: 'Use a custom URL instead of *.github.io'
     required: false
     default: ''
+  github_server_url:
+    description: 'GitHub server URL'
+    required: true
+    default: ${{ github.server_url }}
+  report_name:
+    description: 'Allure report name/title'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
